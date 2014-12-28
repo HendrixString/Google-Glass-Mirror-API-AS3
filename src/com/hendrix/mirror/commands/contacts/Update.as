@@ -20,12 +20,12 @@ package com.hendrix.mirror.commands.contacts
 		 * @param item
 		 * 
 		 */
-		public function Update(item:ContactsItem)
+		public function Update(itemId:String, item:ContactsItem)
 		{
 			super();
 			
 			_item	=	item;
-			_id = _item.id;
+			_id = itemId;
 		}
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void

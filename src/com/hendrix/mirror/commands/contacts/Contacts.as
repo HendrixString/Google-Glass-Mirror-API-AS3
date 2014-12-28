@@ -62,9 +62,9 @@ package com.hendrix.mirror.commands.contacts
 		 * @return 
 		 * 
 		 */
-		public function update(item:ContactsItem):Update
+		public function update(itemId:String, item:ContactsItem):Update
 		{
-			return new Update(item);
+			return new Update(itemId, item);
 		}
 		
 	}

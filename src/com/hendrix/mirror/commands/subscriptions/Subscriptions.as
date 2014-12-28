@@ -39,9 +39,9 @@ package com.hendrix.mirror.commands.subscriptions
 		 * @return 
 		 * 
 		 */
-		public function update(item:SubscriptionItem):Update
+		public function update(itemId:String, item:SubscriptionItem):Update
 		{
-			return new Update(item);
+			return new Update(itemId, item);
 		}
 		
 		/**

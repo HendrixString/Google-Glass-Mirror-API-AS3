@@ -21,12 +21,12 @@ package com.hendrix.mirror.commands.subscriptions
 		 * @param item
 		 * 
 		 */
-		public function Update(item:SubscriptionItem)
+		public function Update(itemId:String, item:SubscriptionItem)
 		{
 			super();
 			
 			_item	=	item;
-			_id = _item.id;
+			_id = itemId;
 		}
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void

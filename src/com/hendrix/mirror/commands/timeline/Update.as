@@ -20,13 +20,15 @@ package com.hendrix.mirror.commands.timeline
 		
 		private var _id:String = null;
 		private var _item:TimelineItem = null;
+		private var _image:ByteArray = null;
 
-		public function Update(item:TimelineItem)
+		public function Update(itemId:String, item:TimelineItem, image:ByteArray = null)
 		{
 			super();
 			
 			_item	=	item;
-			_id = _item.id;
+			_id = itemId;
+			_image = image;
 		}
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void
@@ -37,12 +39,48 @@ package com.hendrix.mirror.commands.timeline
 			
 			var json_timeline:	String 				= JSON.stringify(_item);
 			
-			body 		= RequestBody.create(json_timeline, "application/json");
-			
-			new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline/" + _id).addQuery("access_token", _oauthToken).PUT(body).build();
+			if(_image == null) {
+				body 		= RequestBody.create(json_timeline, "application/json");
+				
+				new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline/" + _id).addQuery("access_token", _oauthToken).PUT(body).build();
+			}
+			else {
+				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
+					                              .addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary").build();
+				
+				request = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
+					                                .url(SConfig.HOST + "/upload/mirror/v1/timeline/" + _id)
+																					.addQuery("access_token", _oauthToken)
+																					.addQuery("uploadType", _uploadType)
+					                                .PUT(body)
+					                                .build();
+			}
 			
 			super.execute($onComplete, $onError);
 		}
+		
+		/*
+		var json_timeline:	String 				= JSON.stringify(_item);
+		
+		var body:						RequestBody 	= null;
+		var request:				Request 			= null;
+		
+		if(_image == null) {
+		body 		= RequestBody.create(json_timeline, "application/json");
+		
+		request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline").addQuery("access_token", _oauthToken).POST(body).build();
+		}
+		else {
+		body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
+		.addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary").build();
+		
+		request = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
+		.url(SConfig.HOST + "/upload/mirror/v1/timeline").addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType)
+		.POST(body)
+		.build();
+		}
+		
+		*/
 
 		public function getUploadType(): String {return _uploadType;}
 		public function seUploadType(uploadType:String):Update
