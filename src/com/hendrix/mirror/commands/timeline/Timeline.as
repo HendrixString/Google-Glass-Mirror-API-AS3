@@ -1,15 +1,14 @@
 package com.hendrix.mirror.commands.timeline
 {
-	import com.hendrix.mirror.Mirror;
-	import com.hendrix.mirror.commands.MirrorCommand;
-	import com.hendrix.mirror.config.SConfig;
-	import com.hendrix.mirror.resources.timeline.TimelineItem;
-	
 	import com.hendrix.http.Request;
 	import com.hendrix.http.RequestBody;
 	import com.hendrix.http.builders.MultiPartBuilder;
 	import com.hendrix.http.builders.RequestBuilder;
 	import com.hendrix.http.core.HttpRequest;
+	import com.hendrix.mirror.Mirror;
+	import com.hendrix.mirror.commands.MirrorCommand;
+	import com.hendrix.mirror.config.SConfig;
+	import com.hendrix.mirror.resources.timeline.TimelineItem;
 	
 	import flash.utils.ByteArray;
 
@@ -30,7 +29,7 @@ package com.hendrix.mirror.commands.timeline
 		 */
 		public function insert(item:TimelineItem, image:ByteArray = null): Insert
 		{
-			return new Insert(item, image);
+			return new Insert(item, image).setOauthToken(_service.oauthToken) as Insert;
 		}
 		
 		/**
@@ -41,7 +40,7 @@ package com.hendrix.mirror.commands.timeline
 		 */
 		public function deleteItem(id:String):Delete
 		{			
-			return new Delete(id);
+			return new Delete(id).setOauthToken(_service.oauthToken) as Delete;
 		}
 		
 		/**
@@ -52,7 +51,7 @@ package com.hendrix.mirror.commands.timeline
 		 */
 		public function get(id:String):Get
 		{
-			return new Get(id);
+			return new Get(id).setOauthToken(_service.oauthToken) as Get;
 		}
 		
 		/**
@@ -63,7 +62,7 @@ package com.hendrix.mirror.commands.timeline
 		 */
 		public function update(item:TimelineItem):Update
 		{
-			return new Update(item);
+			return new Update(item).setOauthToken(_service.oauthToken) as Update;
 		}
 		
 		/**
@@ -73,7 +72,7 @@ package com.hendrix.mirror.commands.timeline
 		 */
 		public function list():List
 		{
-			return new List();
+			return new List().setOauthToken(_service.oauthToken) as List;
 		}
 		
 	}

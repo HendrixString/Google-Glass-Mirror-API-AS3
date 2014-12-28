@@ -10,22 +10,24 @@ package com.hendrix.mirror
 
 	public class Mirror
 	{
-		private var _timeline:Timeline = null;
-		private var _accounts:Accounts = null;
-		private var _attachments:Attachments = null;
-		private var _contacts:Contacts = null;
-		private var _locations:Locations = null;
-		private var _settings:Settings = null;
-		private var _subscriptions:Subscriptions = null;
+		private var _timeline:			Timeline 			= null;
+		private var _accounts:			Accounts 			= null;
+		private var _attachments:		Attachments 	= null;
+		private var _contacts:			Contacts 			= null;
+		private var _locations:			Locations 		= null;
+		private var _settings:		 	Settings 			= null;
+		private var _subscriptions:	Subscriptions = null;
+		
+		private var _oauthToken:		String 				= null;
 		
 		public function Mirror()
 		{
-			_timeline = new Timeline(this);
-			_accounts = new Accounts(this);
-			_attachments = new Attachments(this);
-			_contacts = new Contacts(this);
-			_locations = new Locations(this);
-			_settings = new Settings(this);
+			_timeline      = new Timeline(this);
+			_accounts      = new Accounts(this);
+			_attachments   = new Attachments(this);
+			_contacts      = new Contacts(this);
+			_locations     = new Locations(this);
+			_settings      = new Settings(this);
 			_subscriptions = new Subscriptions(this);
 		}
 		
@@ -62,6 +64,12 @@ package com.hendrix.mirror
 		public function get subscriptions():Subscriptions
 		{
 			return _subscriptions;
+		}
+
+		public function get oauthToken():String	{	return _oauthToken;	}
+		public function set oauthToken(value:String):void
+		{
+			_oauthToken = value;
 		}
 
 	}
