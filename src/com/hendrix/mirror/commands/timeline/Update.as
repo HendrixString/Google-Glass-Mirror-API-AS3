@@ -48,7 +48,7 @@ package com.hendrix.mirror.commands.timeline
 																.build();
 			}
 			else {
-				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
+				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8").type(MultiPartBuilder.RELATED)
 					                              .addPart(RequestBody.create(_image),"Content-Type: image/png\nContent-Transfer-Encoding: binary").build();
 				
 				request = new RequestBuilder(this).url(SConfig.HOST + "/upload/mirror/v1/timeline/" + _id)
