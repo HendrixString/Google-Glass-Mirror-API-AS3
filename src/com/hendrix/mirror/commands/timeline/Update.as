@@ -19,10 +19,10 @@ package com.hendrix.mirror.commands.timeline
 		private var _uploadType:String = multipart;
 		
 		private var _id:String = null;
-		private var _item:TimelineItem = null;
+		private var _item:Object = null;
 		private var _image:ByteArray = null;
 
-		public function Update(itemId:String, item:TimelineItem, image:ByteArray = null)
+		public function Update(itemId:String, item:Object, image:ByteArray = null)
 		{
 			super();
 			
@@ -49,10 +49,9 @@ package com.hendrix.mirror.commands.timeline
 			}
 			else {
 				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
-					                              .addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary").build();
+					                              .addPart(RequestBody.create(_image),"Content-Type: image/png\nContent-Transfer-Encoding: binary").build();
 				
-				request = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
-					                                .url(SConfig.HOST + "/upload/mirror/v1/timeline/" + _id)
+				request = new RequestBuilder(this).url(SConfig.HOST + "/upload/mirror/v1/timeline/" + _id)
 																					.addQuery("access_token", _oauthToken)
 																					.addQuery("uploadType", _uploadType)
 					                                .PUT(body).responseClass(TimelineItem)
@@ -60,6 +59,8 @@ package com.hendrix.mirror.commands.timeline
 			}
 			
 			super.execute($onComplete, $onError);
+			
+			trace();
 		}
 		
 		/*
