@@ -42,7 +42,9 @@ package com.hendrix.mirror.commands.timeline
 			if(_image == null) {
 				body 		= RequestBody.create(json_timeline, "application/json");
 				
-				new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline/" + _id).addQuery("access_token", _oauthToken).PUT(body).build();
+				new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline/" + _id)
+					                      .addQuery("access_token", _oauthToken).PUT(body).responseClass(TimelineItem)
+																.build();
 			}
 			else {
 				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
@@ -52,7 +54,7 @@ package com.hendrix.mirror.commands.timeline
 					                                .url(SConfig.HOST + "/upload/mirror/v1/timeline/" + _id)
 																					.addQuery("access_token", _oauthToken)
 																					.addQuery("uploadType", _uploadType)
-					                                .PUT(body)
+					                                .PUT(body).responseClass(TimelineItem)
 					                                .build();
 			}
 			

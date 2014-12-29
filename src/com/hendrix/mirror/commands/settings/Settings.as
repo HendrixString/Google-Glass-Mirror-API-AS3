@@ -18,7 +18,7 @@ package com.hendrix.mirror.commands.settings
 		 */
 		public function get(id:String):Get
 		{
-			return new Get(id);
+			return new Get(id).setOauthToken(_service.oauthToken) as Get;
 		}
 		
 	}

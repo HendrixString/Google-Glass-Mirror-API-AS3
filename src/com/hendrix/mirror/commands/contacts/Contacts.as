@@ -21,7 +21,7 @@ package com.hendrix.mirror.commands.contacts
 		 */
 		public function deleted(id:String):Delete
 		{
-			return new Delete(id);
+			return new Delete(id).setOauthToken(_service.oauthToken) as Delete;
 		}
 		
 		/**
@@ -32,7 +32,7 @@ package com.hendrix.mirror.commands.contacts
 		 */
 		public function get(id:String):Get
 		{
-			return new Get(id);
+			return new Get(id).setOauthToken(_service.oauthToken) as Get;
 		}
 		
 		/**
@@ -44,7 +44,7 @@ package com.hendrix.mirror.commands.contacts
 		 */
 		public function insert(item:ContactsItem):Insert
 		{
-			return new Insert(item);
+			return new Insert(item).setOauthToken(_service.oauthToken) as Insert;
 		}
 		
 		/**
@@ -54,7 +54,7 @@ package com.hendrix.mirror.commands.contacts
 		 */
 		public function list():List
 		{
-			return new List();
+			return new List().setOauthToken(_service.oauthToken) as List;
 		}
 		
 		/**
@@ -64,7 +64,7 @@ package com.hendrix.mirror.commands.contacts
 		 */
 		public function update(itemId:String, item:ContactsItem):Update
 		{
-			return new Update(itemId, item);
+			return new Update(itemId, item).setOauthToken(_service.oauthToken) as Update;
 		}
 		
 	}

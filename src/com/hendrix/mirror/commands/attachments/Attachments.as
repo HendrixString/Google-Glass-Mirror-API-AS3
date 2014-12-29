@@ -21,7 +21,7 @@ package com.hendrix.mirror.commands.attachments
 		 */
 		public function DeleteItem(itemId:String, attachmentId:String):Delete
 		{
-			return new Delete(itemId, attachmentId);
+			return new Delete(itemId, attachmentId).setOauthToken(_service.oauthToken) as Delete;
 		}
 		
 		/**
@@ -33,7 +33,7 @@ package com.hendrix.mirror.commands.attachments
 		 */
 		public function get(itemId:String, attachmentId:String):Get
 		{
-			return new Get(itemId, attachmentId);
+			return new Get(itemId, attachmentId).setOauthToken(_service.oauthToken) as Get;
 		}
 		
 		/**
@@ -43,9 +43,9 @@ package com.hendrix.mirror.commands.attachments
 		 * @return 
 		 * 
 		 */
-		public function insert(media:ByteArray, contentType:String = null):Insert
+		public function insert(itemId:String, media:ByteArray, contentType:String = null):Insert
 		{
-			return new Insert(media, contentType);
+			return new Insert(itemId, media, contentType).setOauthToken(_service.oauthToken) as Insert;
 		}
 		
 		/**
@@ -56,7 +56,7 @@ package com.hendrix.mirror.commands.attachments
 		 */
 		public function list(itemId:String):List
 		{
-			return new List(itemId);
+			return new List(itemId).setOauthToken(_service.oauthToken) as List;
 		}
 		
 	}

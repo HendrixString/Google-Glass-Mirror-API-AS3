@@ -34,7 +34,10 @@ package com.hendrix.mirror.commands.subscriptions
 			
 			body 		= RequestBody.create(json_timeline, "application/json");
 			
-			new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/subscriptions").addQuery("access_token", _oauthToken).POST(body).build();
+			new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/subscriptions")
+				                      .addQuery("access_token", _oauthToken)
+															.POST(body).responseClass(SubscriptionItem)
+															.build();
 
 			super.execute($onComplete, $onError);
 		}

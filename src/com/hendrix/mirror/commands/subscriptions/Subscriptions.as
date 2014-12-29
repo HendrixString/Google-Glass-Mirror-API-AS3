@@ -19,7 +19,7 @@ package com.hendrix.mirror.commands.subscriptions
 		 */
 		public function deleted(id:String):Delete
 		{
-			return new Delete(id);
+			return new Delete(id).setOauthToken(_service.oauthToken) as Delete;
 		}
 		
 		/**
@@ -30,7 +30,7 @@ package com.hendrix.mirror.commands.subscriptions
 		 */
 		public function insert(item:SubscriptionItem):Insert
 		{
-			return new Insert(item);
+			return new Insert(item).setOauthToken(_service.oauthToken) as Insert;
 		}
 		
 		/**
@@ -41,7 +41,7 @@ package com.hendrix.mirror.commands.subscriptions
 		 */
 		public function update(itemId:String, item:SubscriptionItem):Update
 		{
-			return new Update(itemId, item);
+			return new Update(itemId, item).setOauthToken(_service.oauthToken) as Update;
 		}
 		
 		/**
@@ -51,7 +51,7 @@ package com.hendrix.mirror.commands.subscriptions
 		 */
 		public function list():List
 		{
-			return new List();
+			return new List().setOauthToken(_service.oauthToken) as List;
 		}
 		
 	}

@@ -1,4 +1,4 @@
-package com.hendrix.mirror.resources
+package com.hendrix.mirror.resources.locations
 {
 	import flashx.textLayout.formats.Float;
 

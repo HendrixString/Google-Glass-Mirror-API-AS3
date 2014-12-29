@@ -1,4 +1,4 @@
-package com.hendrix.mirror.resources.timeline
+package com.hendrix.mirror.resources.attachments
 {
 	public class Attachment
 	{

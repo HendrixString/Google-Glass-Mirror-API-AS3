@@ -1,8 +1,9 @@
 package com.hendrix.mirror.resources.timeline
 {
 	import com.hendrix.mirror.resources.DateTime;
-	import com.hendrix.mirror.resources.LocationsItem;
+	import com.hendrix.mirror.resources.locations.LocationsItem;
 	import com.hendrix.mirror.resources.contacts.ContactsItem;
+	import com.hendrix.mirror.resources.attachments.Attachment;
 
 	public class TimelineItem
 	{

@@ -35,7 +35,9 @@ package com.hendrix.mirror.commands.contacts
 			
 			body 		= RequestBody.create(json, "application/json");
 			
-			request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/contacts").addQuery("access_token", _oauthToken).POST(body).build();
+			request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/contacts").addQuery("access_token", _oauthToken)
+				                                .POST(body).responseClass(ContactsItem)
+																				.build();
 			
 			super.execute($onComplete, $onError);
 		}

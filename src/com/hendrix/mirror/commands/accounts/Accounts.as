@@ -17,7 +17,7 @@ package com.hendrix.mirror.commands.accounts
 		 */
 		public function insert():Insert
 		{
-			return new Insert();
+			return new Insert().setOauthToken(_service.oauthToken) as Insert;
 		}
 		
 	}

@@ -29,7 +29,9 @@ package com.hendrix.mirror.commands.timeline
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void
 		{
-			new RequestBuilder(this).DELETE().url(SConfig.HOST + "/mirror/v1/timeline/" + _id).addQuery("access_token", _oauthToken);
+			new RequestBuilder(this).DELETE()
+				                      .url(SConfig.HOST + "/mirror/v1/timeline/" + _id)
+															.addQuery("access_token", _oauthToken).build();
 
 			super.execute($onComplete, $onError);
 		}

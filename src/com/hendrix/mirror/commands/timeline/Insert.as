@@ -45,16 +45,21 @@ package com.hendrix.mirror.commands.timeline
 			if(_image == null) {
 				body 		= RequestBody.create(json_timeline, "application/json");
 				
-				request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline").addQuery("access_token", _oauthToken).POST(body).build();
+				request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline")
+					                                .addQuery("access_token", _oauthToken)
+																					.POST(body).responseClass(TimelineItem)
+																					.build();
 			}
 			else {
 				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
-					.addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary").build();
+					                              .addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary")
+																				.build();
 				
 				request = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
-					.url(SConfig.HOST + "/upload/mirror/v1/timeline").addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType)
-					.POST(body)
-					.build();
+					                                .url(SConfig.HOST + "/upload/mirror/v1/timeline").addQuery("access_token", _oauthToken)
+																					.addQuery("uploadType", _uploadType)
+																					.POST(body).responseClass(TimelineItem)
+																					.build();
 			}
 			
 			super.execute($onComplete, $onError);

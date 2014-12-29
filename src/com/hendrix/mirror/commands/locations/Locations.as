@@ -18,7 +18,7 @@ package com.hendrix.mirror.commands.locations
 		 */
 		public function get(id:String):Get
 		{
-			return new Get(id);
+			return new Get(id).setOauthToken(_service.oauthToken) as Get;
 		}
 		
 		/**
@@ -29,7 +29,7 @@ package com.hendrix.mirror.commands.locations
 		 */
 		public function list(id:String):List
 		{
-			return new List();
+			return new List().setOauthToken(_service.oauthToken) as List;
 		}
 		
 	}

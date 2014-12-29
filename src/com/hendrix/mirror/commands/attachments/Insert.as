@@ -6,6 +6,7 @@ package com.hendrix.mirror.commands.attachments
 	import com.hendrix.http.builders.RequestBuilder;
 	import com.hendrix.mirror.commands.MirrorRequest;
 	import com.hendrix.mirror.config.SConfig;
+	import com.hendrix.mirror.resources.attachments.Attachment;
 	import com.hendrix.mirror.resources.timeline.TimelineItem;
 	
 	import flash.utils.ByteArray;
@@ -28,12 +29,12 @@ package com.hendrix.mirror.commands.attachments
 		 * @param mediaContentType
 		 * 
 		 */
-		public function Insert(media:ByteArray = null, mediaContentType:String = null)
+		public function Insert(itemId:String, media:ByteArray = null, mediaContentType:String = null)
 		{
 			super();
 			
 			_media = media;
-			
+			_itemId = itemId;
 			_mediaContentType = mediaContentType ? mediaContentType : "image/jpeg";
 		}
 		
@@ -44,7 +45,10 @@ package com.hendrix.mirror.commands.attachments
 			
 			body 		= RequestBody.create(_media, _mediaContentType);
 			
-			request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline" + "/" + _itemId + "/attachments").addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType).POST(body).build();
+			request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+				                                .addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType)
+																				.POST(body).responseClass(Attachment)
+																				.build();
 			
 			super.execute($onComplete, $onError);
 		}

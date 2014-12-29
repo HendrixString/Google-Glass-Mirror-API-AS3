@@ -6,6 +6,7 @@ package com.hendrix.mirror.commands.accounts
 	import com.hendrix.http.builders.RequestBuilder;
 	import com.hendrix.mirror.commands.MirrorRequest;
 	import com.hendrix.mirror.config.SConfig;
+	import com.hendrix.mirror.resources.accounts.AccountItem;
 	import com.hendrix.mirror.resources.timeline.TimelineItem;
 	
 	import flash.utils.ByteArray;
@@ -28,7 +29,9 @@ package com.hendrix.mirror.commands.accounts
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void
 		{
-			new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/accounts/" + _userToken + "/" + _accountType + "/" + _accountName).POST().build();
+			new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/accounts/" + _userToken + "/" + _accountType + "/" + _accountName)
+				                      .POST().responseClass(AccountItem)
+															.build();
 			
 			super.execute($onComplete, $onError);
 		}
