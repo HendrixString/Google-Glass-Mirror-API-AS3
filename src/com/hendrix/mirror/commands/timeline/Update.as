@@ -19,10 +19,10 @@ package com.hendrix.mirror.commands.timeline
 		private var _uploadType:String = multipart;
 		
 		private var _id:String = null;
-		private var _item:Object = null;
+		private var _item:TimelineItem = null;
 		private var _image:ByteArray = null;
 
-		public function Update(itemId:String, item:Object, image:ByteArray = null)
+		public function Update(itemId:String, item:TimelineItem, image:ByteArray = null)
 		{
 			super();
 			

@@ -60,7 +60,7 @@ package com.hendrix.mirror.commands.timeline
 		 * @return 
 		 * 
 		 */
-		public function update(itemId:String, item:Object, image:ByteArray = null):Update
+		public function update(itemId:String, item:TimelineItem, image:ByteArray = null):Update
 		{
 			return new Update(itemId, item, image).setOauthToken(_service.oauthToken) as Update;
 		}

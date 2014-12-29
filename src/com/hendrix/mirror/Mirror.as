@@ -18,7 +18,7 @@ package com.hendrix.mirror
 		private var _settings:		 	Settings 			= null;
 		private var _subscriptions:	Subscriptions = null;
 		
-		private var _oauthToken:		String 				= "ya29.6wAULBmly93jHlDhVVFxdPW6TO9dentQ92bPzNAdW78mQZvqwIEpzzPtq1JxTI92FVq7QPRJZEOdUw";
+		private var _oauthToken:		String 				= "ya29.6wDvI7bgUKIeZ8BhwxLCCVDmZLncnEeCJznxpluBGPpp9WxN_vFrbOp36YwFq6uIumfRdJbgAP854g";
 		
 		public function Mirror()
 		{
