@@ -27,6 +27,8 @@ package com.hendrix.mirror.commands.subscriptions
 			
 			_item	=	item;
 			_id = itemId;
+			
+			_item.id = _id;
 		}
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void

@@ -45,7 +45,7 @@ package com.hendrix.mirror.commands.attachments
 			
 			body 		= RequestBody.create(_media, _mediaContentType);
 			
-			request = new RequestBuilder(this).url(SConfig.HOST + "/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+			request = new RequestBuilder(this).url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
 				                                .addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType)
 																				.POST(body).responseClass(Attachment)
 																				.build();

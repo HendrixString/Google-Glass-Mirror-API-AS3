@@ -28,6 +28,7 @@ package com.hendrix.mirror.commands.timeline
 			
 			_item	=	item;
 			_id = itemId;
+			_item.id	=	_id;
 			_image = image;
 		}
 		

@@ -26,6 +26,8 @@ package com.hendrix.mirror.commands.contacts
 			
 			_item	=	item;
 			_id = itemId;
+			
+			_item.id = _id;
 		}
 		
 		override public function execute($onComplete:Function=null, $onError:Function=null):void
