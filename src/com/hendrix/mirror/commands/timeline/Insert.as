@@ -51,8 +51,8 @@ package com.hendrix.mirror.commands.timeline
 																					.build();
 			}
 			else {
-				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline),"Content-Type: application/json; charset=UTF-8")
-					                              .addPart(RequestBody.create(_image),"Content-Type: image/jpeg\nContent-Transfer-Encoding: binary")
+				body 		= new MultiPartBuilder().addPart(RequestBody.create(json_timeline, "Content-Type: application/json; charset=UTF-8"))
+					                              .addPart(RequestBody.create(_image, "Content-Type: image/jpeg"),"Content-Transfer-Encoding: binary")
 																				.build();
 				
 				request = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
