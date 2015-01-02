@@ -1,7 +1,7 @@
 package com.hendrix.mirror.commands
 {
 	import com.hendrix.http.Request;
-	import com.hendrix.http.core.HttpRequest;
+	import com.hendrix.http.core.HttpRequestProcess;
 	
 	public class MirrorRequest extends Request
 	{

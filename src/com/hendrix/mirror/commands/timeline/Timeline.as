@@ -4,7 +4,7 @@ package com.hendrix.mirror.commands.timeline
 	import com.hendrix.http.RequestBody;
 	import com.hendrix.http.builders.MultiPartBuilder;
 	import com.hendrix.http.builders.RequestBuilder;
-	import com.hendrix.http.core.HttpRequest;
+	import com.hendrix.http.core.HttpRequestProcess;
 	import com.hendrix.mirror.Mirror;
 	import com.hendrix.mirror.commands.MirrorCommand;
 	import com.hendrix.mirror.config.SConfig;
