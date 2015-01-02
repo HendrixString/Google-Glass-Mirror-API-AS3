@@ -22,7 +22,7 @@ package com.hendrix.mirror
 		
 		public function Mirror()
 		{
-			_timeline      = new Timeline(this); 
+			_timeline      = new Timeline(this);
 			_accounts      = new Accounts(this);
 			_attachments   = new Attachments(this);
 			_contacts      = new Contacts(this);
