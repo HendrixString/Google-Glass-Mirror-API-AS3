@@ -40,10 +40,10 @@ package com.hendrix.mirror.commands.attachments
 		
     override public function execute($onComplete:Function=null, $onError:Function=null):void
     {
-      var body:						RequestBody 	= null;
-      var request:				Request 			= null;
+      var body:           RequestBody   = null;
+      var request:        Request       = null;
       
-      body 	                            = RequestBody.create(_media, _mediaContentType);
+      body                              = RequestBody.create(_media, _mediaContentType);
       
       request                           = new RequestBuilder(this).url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
                                                                   .addQuery("access_token", _oauthToken).addQuery("uploadType", _uploadType)
