@@ -13,8 +13,8 @@ package com.hendrix.mirror.commands
 		}
 		
 		
-		public function getOauthToken():String	{	return _oauthToken;		}
-		public function setOauthToken(value:String):MirrorRequest
+		public function getOauthToken():              String	{	return _oauthToken;		}
+		public function setOauthToken(value:String):  MirrorRequest
 		{
 			_oauthToken = value;
 			
