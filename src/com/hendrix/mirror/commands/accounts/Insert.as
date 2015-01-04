@@ -18,9 +18,9 @@ package com.hendrix.mirror.commands.accounts
   */
   public class Insert extends MirrorRequest
   {
-    private var _accountName:String = null;
-    private var _accountType:String = null;
-    private var _userToken:String = null;
+    private var _accountName: String = null;
+    private var _accountType: String = null;
+    private var _userToken:   String = null;
 
     public function Insert()
     {
