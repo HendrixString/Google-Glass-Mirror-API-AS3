@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.hendrix.mirror.resources.timeline.TimelineListResponse"/>
+    <classEntry path="com.hendrix.mirror.resources.attachments.AttachmentsListResponse"/>
+    <classEntry path="com.hendrix.mirror.resources.contacts.ContactsListResponse"/>
+    <classEntry path="com.hendrix.mirror.resources.locations.LocationsListResponse"/>
+    <classEntry path="com.hendrix.mirror.resources.subscriptions.SubscriptionsListResponse"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
