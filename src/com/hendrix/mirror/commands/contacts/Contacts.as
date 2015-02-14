@@ -3,9 +3,7 @@ package com.hendrix.mirror.commands.contacts
   import com.hendrix.mirror.Mirror;
   import com.hendrix.mirror.commands.MirrorCommand;
   import com.hendrix.mirror.resources.contacts.ContactsItem;
-  
-  import flash.utils.ByteArray;
-  
+    
   public class Contacts extends MirrorCommand
   {
     public function Contacts(service:Mirror)

@@ -1,15 +1,9 @@
 package com.hendrix.mirror.commands.contacts
 {
-  import com.hendrix.http.Request;
-  import com.hendrix.http.RequestBody;
-  import com.hendrix.http.builders.MultiPartBuilder;
   import com.hendrix.http.builders.RequestBuilder;
   import com.hendrix.mirror.commands.MirrorRequest;
   import com.hendrix.mirror.config.SConfig;
   import com.hendrix.mirror.resources.contacts.ContactsListResponse;
-  import com.hendrix.mirror.resources.timeline.TimelineItem;
-  
-  import flash.utils.ByteArray;
 	
   /**
    * Retrieves a list of contacts for the authenticated user 

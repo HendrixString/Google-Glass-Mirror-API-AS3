@@ -2,14 +2,11 @@ package com.hendrix.mirror.commands.contacts
 {
   import com.hendrix.http.Request;
   import com.hendrix.http.RequestBody;
-  import com.hendrix.http.builders.MultiPartBuilder;
   import com.hendrix.http.builders.RequestBuilder;
   import com.hendrix.mirror.commands.MirrorRequest;
   import com.hendrix.mirror.config.SConfig;
   import com.hendrix.mirror.resources.contacts.ContactsItem;
-  
-  import flash.utils.ByteArray;
-  
+    
   public class Insert extends MirrorRequest
   {
     private var _item:ContactsItem = null;

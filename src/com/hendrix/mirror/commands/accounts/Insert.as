@@ -1,15 +1,9 @@
 package com.hendrix.mirror.commands.accounts
 {
-  import com.hendrix.http.Request;
-  import com.hendrix.http.RequestBody;
-  import com.hendrix.http.builders.MultiPartBuilder;
   import com.hendrix.http.builders.RequestBuilder;
   import com.hendrix.mirror.commands.MirrorRequest;
   import com.hendrix.mirror.config.SConfig;
   import com.hendrix.mirror.resources.accounts.AccountItem;
-  import com.hendrix.mirror.resources.timeline.TimelineItem;
-	
-  import flash.utils.ByteArray;
 	
   /**
    * Inserts a new account for a user 

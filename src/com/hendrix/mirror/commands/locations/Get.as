@@ -1,16 +1,10 @@
 package com.hendrix.mirror.commands.locations
 {
-  import com.hendrix.http.Request;
-  import com.hendrix.http.RequestBody;
-  import com.hendrix.http.builders.MultiPartBuilder;
   import com.hendrix.http.builders.RequestBuilder;
   import com.hendrix.mirror.commands.MirrorRequest;
   import com.hendrix.mirror.config.SConfig;
   import com.hendrix.mirror.resources.locations.LocationsItem;
-  import com.hendrix.mirror.resources.timeline.TimelineItem;
-  
-  import flash.utils.ByteArray;
-  
+    
   public class Get extends MirrorRequest
   {
     private var _id:String = null;
