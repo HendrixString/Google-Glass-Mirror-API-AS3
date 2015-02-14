@@ -1,7 +1,5 @@
 package com.hendrix.mirror.resources.locations
-{
-  import flashx.textLayout.formats.Float;
-  
+{  
   public class LocationsItem
   {
     /**
