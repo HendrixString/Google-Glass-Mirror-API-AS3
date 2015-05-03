@@ -23,8 +23,9 @@ package com.hendrix.mirror.commands.attachments
 		
     /**
      * Adds a new attachment to a timeline item 
-     * @param media
-     * @param mediaContentType
+     * 
+     * @param media binary
+     * @param mediaContentType for exmaple "image/jpeg", "image/png" or whatever is supported.
      * 
      */
     public function Insert(itemId:String, media:ByteArray = null, mediaContentType:String = null)
