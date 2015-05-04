@@ -51,9 +51,14 @@ private function req_onError(res:Object = null):void
 
 ```
 
+### Dependencies
+* [`Hendrix HttP library`](https://github.com/HendrixString/Hendrix-HttP-AiR)
+
 ### Terms
-* completely free source code.
+* completely free source code. [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0)
 * if you like it -> star or share it with others
 
-### Contact
-[tomer.shalev@gmail.com](tomer.shalev@gmail.com)
+### Contact Author
+* [tomer.shalev@gmail.com](tomer.shalev@gmail.com)
+* [Google+](https://plus.google.com/+TomershalevMan/about)
+* [Facebook](https://www.facebook.com/HendrixString)
