@@ -15,14 +15,14 @@ to your project, or import to your IDE of choice such as `Flash Builder 4.7`.
 
 ## Guide
 1. I recommend the following official [Google Mirror api reference](https://developers.google.com/glass/v1/reference/).
-2. you will need to create a google app in the Google App Engine and activate Mirror API, and grab `Client ID` and `Secret`.
+2. you will need to create a google app in the *Google App Engine* and activate Mirror API, and grab `Client ID` and `Secret`.
 3. then, you will need to download an `OAuth 2` token library for `AS3`. there are many at GitGub. I used [actionscript-oauth2](https://github.com/charlesbihis/actionscript-oauth2).
 4. simply create valid OAuth 2 tokens using the `Client ID` and `Secret` and a library you have chosen from step 3.
 
 ###### TimeLine example: inserting a card with text and image.
 
 ```
-private var mirror: Mirror = null;
+private var _mirror: Mirror = null;
 
 private function init():void {
     _mirror             = new Mirror();
