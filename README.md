@@ -60,5 +60,5 @@ private function req_onError(res:Object = null):void
 
 ### Contact Author
 * [tomer.shalev@gmail.com](tomer.shalev@gmail.com)
-* [Google+](https://plus.google.com/+TomershalevMan/about)
-* [Facebook](https://www.facebook.com/HendrixString)
+* [Google+ TomershalevMan](https://plus.google.com/+TomershalevMan/about)
+* [Facebook - HendrixString](https://www.facebook.com/HendrixString)
