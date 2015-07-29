@@ -54,14 +54,14 @@ package com.hendrix.mirror.commands.timeline
         body                            = new MultiPartBuilder().addPart(RequestBody.create(json_timeline, "Content-Type: application/json; charset=UTF-8"))
                                                                 .addPart(RequestBody.create(_image, "Content-Type: image/jpeg"),"Content-Transfer-Encoding: binary")
                                                                 .build();
-  
+
         request                         = new RequestBuilder(this).addHeader("Cache-Control", "no-cache")
                                                                   .url(SConfig.HOST + "/upload/mirror/v1/timeline").addQuery("access_token", _oauthToken)
                                                                   .addQuery("uploadType", _uploadType)
                                                                   .POST(body).responseClass(TimelineItem)
                                                                   .build();
       }
-    
+
       super.execute($onComplete, $onError);
     }
 		
