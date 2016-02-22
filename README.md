@@ -21,7 +21,7 @@ to your project, or import to your IDE of choice such as `Flash Builder 4.7`.
 
 ###### TimeLine example: inserting a card with text and image.
 
-```
+```actionscript
 private var _mirror: Mirror = null;
 
 private function init():void {
